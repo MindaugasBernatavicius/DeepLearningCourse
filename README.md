@@ -3,6 +3,6 @@
 
 ## Learning Algorithms table
 
-| Algo name | Implementation | Training Complexity | Inference Complexity | Supervised |
+| Algo name | Impl | Train. Complexity | Inf. Complexity | Learn type | 
 |----|----|----|----|----|
-| x | x | x | x | x | 
+| Linear Regression | OLS | x | x | Supervised | 
