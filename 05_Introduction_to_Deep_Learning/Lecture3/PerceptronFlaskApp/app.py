@@ -5,10 +5,19 @@ from NeuralNetwork import NeuralNetwork
 app = Flask(__name__)
 nn = NeuralNetwork()
 
-
 @app.route('/', methods=['GET'])
+def say_hello():
+    return "Hello world!"
+
+
+@app.route('/<name>', methods=['GET'])
+def greet_by_name(name):
+    return f"Hello {name if name else 'world'}"
+
+
+@app.route('/in', methods=['GET'])
 def get_input_form():
-    resp = '<form method="POST" action="/">'
+    resp = '<form method="POST" action="/in">'
     resp += '<label for="option1">Has a job?</label>'
     resp += '<input type="radio" id="option1" name="option1" value="yes">Yes</input>'
     resp += '<input type="radio" id="option1" name="option1" value="no">No</input><br>'
@@ -23,7 +32,7 @@ def get_input_form():
     return resp
 
 
-@app.route('/', methods=['POST'])
+@app.route('/in', methods=['POST'])
 def post_input_form():
     current_data = [0,0,0]
     current_data[0] = 1 if request.form['option1'] == "yes" else 0
