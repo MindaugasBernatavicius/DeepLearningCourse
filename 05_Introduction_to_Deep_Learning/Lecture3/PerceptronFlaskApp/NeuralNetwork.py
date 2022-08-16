@@ -15,7 +15,7 @@ class NeuralNetwork():
     # def sigmoid_derivative(self, x):
     #     return x * (1 - x)
     #
-    # def train(self, trainin   g_inputs, training_outputs, training_iterations):
+    # def train(self, training_inputs, training_outputs, training_iterations):
     #     for iteration in range(training_iterations):
     #         output = self.predict(training_inputs)
     #         error = training_outputs - output
